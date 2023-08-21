@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .before {
+            color: red;
+        }
+        .after {
+            color: blue;
+        }
+
+        .item::before {
+            content: '321';
+            font-size: 30px;
+            color: green;
+        }
+        .item::after {
+            /* content: 'cba'; */
+            content: url('../images//hot_icon.svg');
+            font-size: 30px;
+            color: blueviolet;
+        }
+
+        .new::after {
+            content: url('../images/new_icon.svg');
+            position: relative;
+            top: 2px;
+            left: 5px;
+        }
+        
+        /* 额外的补充 */
+        .box5::after {
+            /* 在使用伪元素的过程总，不要将 content 省略 */
+            content: '';
+
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: red;
+        }
+
+        .box6 {
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <span class="before">before</span>div 元素<span class="after">after</span>
+    </div>
+
+    <div class="box2">
+        <span class="before">before</span>
+        div 元素 box2
+        <span class="after">after</span>
+    </div>
+
+    <!-- 伪元素方案 -->
+    <div class="box3 item">div 元素 box3</div>
+    <div class="box4 new">div 元素 box4</div>
+
+    <div class="box5">div 元素 box5</div>
+
+
+    <div class="box6">ddd</div>
+</body>
+</html>

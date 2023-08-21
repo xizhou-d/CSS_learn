@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 行盒一定会把所有的内容都包裹进去 */
+        /* vertical-align: 会影响行内块级元素在一个行盒中垂直方向的位置 */
+
+        /* 图片和 inline-block两个元素下方的像素是因为 baseline 对齐引起的，即使没有文本也有下方的几个像素，因为要为有文本做准备 */
+        /* 默认情况下，图片和 inline-block 的 baseline 在底部 */
+        /* 如果 inline-block 里面加了文本，那么 base-line 的位置就会发生改变（变成了最后一行文本的 baseline），这是就会导致页面布局看起来很奇怪 */
+        .box {
+            background-color: skyblue;
+        }
+        img {
+            width: 200px;
+        }
+        .small {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        我是普通的文本，
+        <img src="../images/shihao.jpeg" alt="">
+        <span class="small">aaaaa</span>
+    </div>
+</body>
+</html>

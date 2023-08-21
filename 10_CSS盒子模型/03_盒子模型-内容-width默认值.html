@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            background-color: green;
+
+            /* width */
+            /* auto 宽度交给浏览器来决定 */
+            /* 块级元素：独占一行（父元素） */
+            width: auto;
+        }
+        .title {
+            /* 行内级：宽度将元素包裹 */
+            display: inline-block;
+            background: aqua;
+            width: auto;
+        }
+        img {
+            width: auto
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">我是 box</div>
+    <span class="title">我是 span  元素</span>
+    <img src="../images/荒天帝.jpeg" alt="">
+</body>
+
+</html>

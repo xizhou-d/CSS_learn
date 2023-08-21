@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 1190px;
+            /* height: 500px; */
+            margin: 0 auto;
+            background-color: orange;
+        }
+        .box {
+            margin: 0 -5px;
+        }
+        .container .item {
+            width: 290px;
+            float: left;
+            margin: 0 5px;
+        }
+        .container .left {
+            height: 370px;
+            background-color: greenyellow;
+        }
+        .container .right {
+            height: 180px;
+            background-color: skyblue;
+            margin-bottom: 10px;
+        }
+        .bottom {
+            height: 80px;
+            background-color: green;
+        }
+        .line {
+            /* height: 6px; */
+            /* background-color: #000; */
+            clear: both;
+        }
+        /* 最终的解决方案 */
+        .clear_fix::after {
+            content: '';
+            clear: both;
+            display: block;
+
+            visibility: hidden; /* 浏览器兼容性 */
+            height: 0; /* 浏览器兼容性 */
+        }
+    </style>
+</head>
+<body>
+    <!-- 因为所有的后代元素 item 都是浮动的，脱离标准流 -->
+    <!-- 
+        不会向父元素 box 汇报高度, 那么 box 元素就不会被撑起来，就不会有高度，
+        因此，box 的父元素 container 也是没有被撑起来，也同样没有高度
+    -->
+    <div class="container">
+        <div class="box clear_fix">
+            <div class="item left"></div>
+            <div class="item left"></div>
+            <div class="item right"></div>
+            <div class="item right"></div>
+            <div class="item right"></div>
+            <div class="item right"></div>
+            <div class="item right"></div>
+            <div class="item right"></div>
+
+            <!-- 清除浮动的方式一：div.line    .line: clear:both -->
+            <!-- <div class="line"></div> -->
+        </div>
+    </div>
+
+    <!-- 
+        bottom 认为 container 没有高度，就会在上面显示
+     -->
+    <div class="bottom"></div>
+</body>
+</html>

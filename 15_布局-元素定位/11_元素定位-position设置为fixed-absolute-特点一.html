@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            background-color: red;
+        }
+        /* 
+            设置为 position: absolute/fixed 后，不再给父元素汇报宽高数据
+            就是在没有设置 position: absolute 之前，父元素的宽高会被 strong 撑开，但是 设置了 position: absolute  之后
+            不再给父元素 div 汇报宽高，那么div 就不会被撑开，看不到了，宽高都是0（div 自己设置了宽高除外）
+        */
+        .box strong {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <strong>stong element.</strong>
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            height: 450px;
+            background-color: red;
+            overflow: hidden;
+        }
+        img {
+            position: relative;
+            /**
+                left 设置百分比的时候是相对于包含块的宽度,设置具体的值是相对于自身宽度
+                translate 中的百分比是相对于自己的
+            */
+            /* left: -960px; */
+            transform: translate(-50%);
+            /**
+                margin-left 设置百分比的时候是相对于包含块的宽度
+            */
+            margin-left: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="../images/menghuanxiyou.jpeg" alt="">
+    </div>
+</body>
+</html>

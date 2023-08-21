@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .home span {
+            color: red;
+            font-size: 30px;
+        }
+
+        /* .home 的直接子代的 span 元素设置一个背景 */
+        .home > span {
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="home">
+        <span>home son span</span>
+        <div class="box">
+            <span>秦国-白起</span>
+        </div>
+
+        <div class="content">
+            <div class="desc">
+                <p>
+                    <span>楚国-屈原</span>
+                </p>
+            </div>
+        </div>
+
+        <span>11111111</span>
+        <div>
+            <span>
+                2222222222
+            </span>
+        </div>
+    </div>
+</body>
+</html>

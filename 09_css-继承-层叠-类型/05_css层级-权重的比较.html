@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            color: red!important; /* 10000 */
+        }
+        /* id 选择器：100 */
+        #dbx {
+            color: yello;
+        }
+        /* 类，属性，伪类选择器： 10 */
+        .one.first {
+            color: green;
+        }
+        /* 元素选择器 1 */
+        div {
+            color: hotpink;
+        }
+        /* 通配选择器：0 */
+        * {
+            color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <!-- 内联样式：1000 -->
+    <div class="box one first" id="dbx" style="color: greenyellow">div: calss box</div>
+</body>
+</html>

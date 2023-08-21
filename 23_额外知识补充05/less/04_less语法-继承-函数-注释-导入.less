@@ -1,0 +1,46 @@
+
+
+// 1. 继承
+// .box-border {
+//     border: 2px solid purple;
+// }
+
+// .box {
+//     width: 100px;
+//     background-color: skyblue;
+
+//     // 混入
+//     // .box-border();
+
+//     // 继承
+//     &:extend(.box-border);
+// }
+
+// 2. 内置函数
+// .box {
+//     // color 函数转化颜色成十六进制
+//     color: color(skyblue);
+//     // convert 将 px 转换成其他的长度单位
+//     width: convert(100px, 'in');
+//     background-color: #000;
+// }
+
+
+// 3. 作用域(scope)
+@import './public.less';
+
+@mainColor: red;
+
+.box {
+    @mainColor: green;
+
+    .item {
+        span {
+            // @mainColor: yellow;
+            .box_color();
+
+            color: @mainColor;
+        }
+    }
+}
+

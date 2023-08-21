@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 1000px;
+            height: 800px;
+            background-color: red;
+            position: relative;
+        }
+        .box {
+            width: 800px;
+            height: 600px;
+            background-color: green;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+        .text {
+            position: absolute;
+            /* 设置的四个值 */
+            /* 在没有祖先元素定位的情况下，相对于视口定位 */
+            left: 0;
+            bottom: 0;
+            background-color: #00f;
+            width: 100px;
+            height: 40px;
+        }
+        img {
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div>AAAAAA</div>
+    <div class="container">
+        <div class="box">
+            <span>span element.</span>
+            <strong  class="text">strong element.</strong>
+            <img src="../images/shihao.jpeg" alt="">
+            <div>div element.</div>
+        </div>
+    </div>
+    <div>XXXXXX</div>
+</body>
+</html>

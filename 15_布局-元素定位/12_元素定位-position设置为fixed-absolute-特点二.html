@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 800px;
+            height: 400px;
+            background-color: red;
+            position: relative;
+        }
+        .container {
+            height: 200px;
+            background-color: green;
+            width: 200px;
+            /* margin: 0 auto    只能让 display: block 的块级元素居中，并且是水平方向上的居中 */
+            margin: auto;
+            position: absolute; 
+            /* 
+                当 positiona: absolute 时，有以下公式
+                公式：定位参照对象的宽度 = left + right + margin-left + margin-right + 绝对定位元素的实际占用宽度
+                    定位参照对象的宽度 = left + right + margin-left + margin-right + 绝对定位元素的实际占用宽度
+
+                因此：在水平方向上，left、right 设置为 0，margin: 0 auato ，那么 auto 会等分剩余的宽度，会水平居中
+                    垂直方向上也是一样
+
+
+                position: absolute 是水平，垂直居中的一种方案
+
+
+                position: absolute 方式，在 left、right、top、bottom 都为 0 的情况下，剩余宽度会优先分配给 width 、height会占满定位参照对象的宽度
+                因此，要想水平或者垂直居中，绝对定位的方式必须设置高度和宽度 
+            */
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="container"></div>
+    </div>
+</body>
+</html>

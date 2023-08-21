@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 1000px;
+            height: 800px;
+            background-color: red;
+            position: relative;
+        }
+        .box {
+            width: 800px;
+            height: 600px;
+            background-color: green;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+        .text {
+            /* 
+                行内非替换元素，设置了 position: absolute 之后，可以设置宽高，
+                宽高由内容决定：比如 div 元素设置绝对定位，那么不会再独占一行，取决于其内容能占据的宽高
+                不再严格按照从上到下、从左到右排布
+                不再严格区分块级(block)、行内级(inline)，行内块级(inline-block)的很多特性都会消失
+            */
+            position: absolute;
+            /* 设置的四个值 */
+            /* 在没有祖先元素定位的情况下，相对于视口定位 */
+            left: 0;
+            bottom: 0;
+            background-color: #00f;
+            width: 100px;
+            height: 40px;
+        }
+        img {
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div>AAAAAA</div>
+    <div class="container">
+        <div class="box">
+            <span>span element.</span>
+            <strong  class="text">strong element.</strong>
+            <img src="../images/shihao.jpeg" alt="">
+            <div>div element.</div>
+        </div>
+    </div>
+    <div>XXXXXX</div>
+</body>
+</html>

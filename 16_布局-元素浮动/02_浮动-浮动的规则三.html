@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            浮动元素之间不能层叠
+                 如果一个元素浮动，另一个浮动元素已经在那个位置了，后浮动的元素将紧贴着前一个浮动元素(左浮找左浮，右浮找右浮) 
+                 如果水平方向剩余的空间不够显示浮动元素，浮动元素将向下移动，直到有充足的空间为止
+        */
+        .item {
+            background-color: red;
+            width: 100px;
+            height: 100px;
+            /* 三个全部向左浮动，全部脱离标准流 */
+            /* float: left; */
+        }
+
+        .box1 {
+            float: left;
+            background-color: green;
+            margin-left: 30px;
+        }
+
+        .box2 {
+            float: left;
+        }
+
+        .box3 {
+            float: left;
+        }
+
+        .box4 {
+            width: 200px;
+            height: 100px;
+            background-color: purple;
+            float: left;
+        }
+        .container {
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 浮动元素之间不能层叠 -->
+    <div class="container">
+        <div class="item box1">1</div>
+        <div class="item box2">2</div>
+        <div class="item box3">3</div>
+        <div class="item box4">4</div>
+    </div>
+</body>
+
+</html>

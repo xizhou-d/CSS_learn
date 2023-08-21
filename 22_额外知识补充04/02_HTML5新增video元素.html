@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        controls: 是否显示控制栏,包括音量，跨帧，暂停/恢复播放。
+     -->
+
+    <!-- 基本使用 -->
+    <video src="./assets//fcrs.mp4" width="600" controls autoplay muted> </video>
+
+    <!--
+        兼容写法:
+            浏览器不支持 mp4 格式的视频时，浏览器会查看是否有设置 source, source 指定其他格式的视频,
+    -->
+    <video src="./assets//fcrs.mp4" width="600" controls autoplay muted>
+        <source src="./assets//fcrs.ogg">
+        <source src="./assets//fcrs.webm">
+
+        <p>以上格式都不支持的提示文案</p>
+    </video>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 800px;
+            height: 800px;
+            background-color: orange;
+            display: flex;
+        }
+        .item {
+            /* width: 100px; */
+            height: 100px;
+            /* 基础尺寸：如果当前标签中的内容有很长的单词，宽度会自动变宽。一定是单词才会生效，否则跟 width 一样的效果； */
+            flex-basis: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item item1">1</div>
+        <div class="item item2">孟门，THERE_IS_A_WILL</div>
+        <div class="item item3">3</div>
+        <!-- <div class="item item4">4</div>
+        <div class="item item5">5</div>
+        <div class="item item5">6</div>
+        <div class="item item5">7</div>
+        <div class="item item5">8</div>
+        <div class="item item5">9</div> -->
+        <!-- <div class="item item5">6</div>
+        <div class="item item5">7</div>
+        <div class="item item5">8</div>
+        <div class="item item5">9</div> -->
+        <!-- <div class="item item5">6</div>
+        <div class="item item5">7</div>
+        <div class="item item5">8</div>
+        <div class="item item5">9</div>
+        <div class="item item5">6</div>
+        <div class="item item5">7</div>
+        <div class="item item5">8</div>
+        <div class="item item5">9</div> -->
+    </div>
+    <script src="./js/itemRandomColor.js"></script>
+</body>
+</html>

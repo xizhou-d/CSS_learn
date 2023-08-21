@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+
+            /* 使用 text-align 前提条件是所包裹的元素是 inline-level box */
+            /* 行内级：行内非替换元素 span/a 行内替换元素： img/input inline-block */
+        }
+        .container {
+            width: 800px;
+            height: 200px;
+            background-color: green;
+        }
+        .box {
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            display: inline-block;
+            /* 只适用于 block 元素，并且是水平方向上的居中 */
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">d</div>
+    </div>
+</body>
+</html>

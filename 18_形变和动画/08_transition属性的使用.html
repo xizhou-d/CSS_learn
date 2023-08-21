@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            background-color: red;
+        }
+        .box {
+            position: relative;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            /* 告知浏览器 box 在进行一些 CSS 属性变化的时候有一个过渡效果 */
+            /* transition-property: left; */
+            /* transition-property: transform; */
+            /* transition-property: left, transform; */
+            /* transition-property: left, width, transform; */
+
+            /* transition-property: all;
+            transition-duration: 1s;
+            transition-timing-function: ease-in; */
+
+            /* transition 简写属性 */
+            transition: all 1s ease-in 1s;
+        }
+        .container:hover .box {
+            left: 200px;
+            width: 500px;
+            transform: translate(200px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>
+    </div>
+</body>
+</html>

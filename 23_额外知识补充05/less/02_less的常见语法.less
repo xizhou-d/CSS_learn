@@ -1,0 +1,49 @@
+// 1. 编写 CSSS 代码
+// 兼容平常的 CSS 代码
+// .box {
+//     width: 100px;
+//     height: 100px;
+//     background-color: orange;
+// }
+
+// 2. 定义变量
+@mainColor: #a40011;
+
+@smallFontSize: 12px;
+@normalFontSize: 14px;
+@bigFontSize: 18px;
+
+// .box .pel {
+//     color: @mainColor;
+//     font-size: @normalFontSize;
+// }
+
+// .box h1 .keyword {
+//     color: @mainColor;
+//     font-size: @bigFontSize;
+// }
+
+// .box p .link {
+//     color: @mainColor;
+//     font-size: @smallFontSize;
+// }
+
+// 3. 选择器的嵌套
+.box {
+    .pel {
+        color: @mainColor;
+        font-size: @normalFontSize;
+    }
+    h1 {
+        .keyword {
+            color: @mainColor;
+            font-size: @bigFontSize;
+        }
+    }
+    p {
+        .link {
+            color: @mainColor;
+            font-size: @smallFontSize;
+        }
+    }
+}

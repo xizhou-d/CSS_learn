@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 800px;
+            height: 800px;
+            background-color: orange;
+            display: flex;
+        }
+        .item {
+            width: 100px;
+            height: 100px;
+            /* flex-shrink 压缩 默认值（1，默认会压缩） */
+            flex-shrink: 0;
+        }
+        .item1 {
+            flex-shrink: 1;
+            min-width: 70px;
+        }
+        .item2 {
+            flex-shrink: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item item1">1</div>
+        <div class="item item2">2</div>
+        <div class="item item3">3</div>
+        <div class="item item4">4</div>
+        <div class="item item5">5</div>
+        <div class="item item5">6</div>
+        <div class="item item5">7</div>
+        <div class="item item5">8</div>
+        <div class="item item5">9</div>
+        <!-- <div class="item item5">6</div>
+        <div class="item item5">7</div>
+        <div class="item item5">8</div>
+        <div class="item item5">9</div> -->
+        <!-- <div class="item item5">6</div>
+        <div class="item item5">7</div>
+        <div class="item item5">8</div>
+        <div class="item item5">9</div>
+        <div class="item item5">6</div>
+        <div class="item item5">7</div>
+        <div class="item item5">8</div>
+        <div class="item item5">9</div> -->
+    </div>
+    <script src="./js/itemRandomColor.js"></script>
+</body>
+</html>

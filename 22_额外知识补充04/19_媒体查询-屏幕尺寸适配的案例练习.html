@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            屏幕宽度在 320 ～ 375 之间： font-size: 15px; 
+            屏幕宽度在 375 ～ 414 之间： font-size: 18px; 
+            屏幕宽度在 414 ～ 480 之间： font-size: 21px; 
+            大于 480px::after         font-size: 24px;
+        */
+        /* @media (min-width: 320px) and (max-width: 375px) {
+            .box {
+                font-size: 15px;
+            }
+        }
+        @media (min-width: 375px) and (max-width: 414px) {
+            .box {
+                font-size: 18px;
+            }
+        }
+        @media (min-width: 414px) and (max-width: 480px) {
+            .box {
+                font-size: 21px;
+            }
+        }
+        @media (min-width: 480px) {
+            .box {
+                font-size: 24px;
+            }
+        } */
+
+        /* ________________CSS 层叠性_________________ */
+        @media (min-width: 320px) {
+            .box {
+                font-size: 15px;
+            }
+        }
+        @media (min-width: 375px) {
+            .box {
+                font-size: 18px;
+            }
+        }
+        @media (min-width: 414px) {
+            .box {
+                font-size: 21px;
+            }
+        }
+        @media (min-width: 480px) {
+            .box {
+                font-size: 24px;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        士之特立独行，适于义而已，不顾人之是非：皆豪杰之士，信道笃而自知明者也。一家非之，力行而不惑者寡矣；至于一国一州非之，力行而不惑者，盖天下一人而已矣；若至于举世非之，力行而不惑者，则千百年乃一人而已耳；若伯夷者，穷天地、亘万世而不顾者也。昭乎日月不足为明，崒乎泰山不足为高，巍乎天地不足为容也
+    </div>
+</body>
+</html>

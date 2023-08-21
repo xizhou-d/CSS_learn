@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css ">
+    <style>
+        body {
+            background-color: grey;
+            text-align: center;
+        }
+        a {
+            width: 234px;
+            height: 300px;
+            display: inline-block;
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px 10px;
+            box-sizing: border-box;
+        }
+        a:hover {
+            box-shadow: 0 2px 10px 5px rgba(0, 0, 0, .2);
+        }
+        img {
+            width: 160px;
+            height: 160px;
+        }
+        h3 {
+            text-decoration: none;
+            color: #000;
+            margin-bottom: 2px;
+        }
+        .desc {
+            color: #999;
+
+            /* 单行显示省略号 */
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: 10px;
+        }
+        .price .del {
+            text-decoration: line-through;
+            color: #b0b0b0
+        }
+    </style>
+</head>
+<body>
+    <a href="https://www.mi.com/xiaomibuds3pro">
+        <img src="../images/xiaomierji.webp" alt="">
+        <h3>Xiaomi Buds 3 Pro</h3>
+        <p class="desc">40dB自适应降噪 ｜空间音频 ｜ HiFi高保真音质</p>
+        <p class="price">
+            <span class="now">399元</span>
+            <span class="del">699元</span>
+        </p>
+    </a>
+</body>
+</html>

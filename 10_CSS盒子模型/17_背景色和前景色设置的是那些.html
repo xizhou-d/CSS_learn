@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            1. 背景色有没有设置到 border 下面（有设置）
+            2. 前景色会在 border 没有设置颜色的情况下，显示出来 color 颜色
+        */
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            color: green;
+            padding: 30px;
+            border: 10px dashed;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">div element</div>
+</body>
+</html>

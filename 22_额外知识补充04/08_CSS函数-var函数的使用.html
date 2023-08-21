@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* html 可以写成 :root */
+        html {
+            /* 定义了一个变量 */
+            /* 只有后代元素可以使用 */
+            --main-color: #19c362;
+        }
+        .box {
+            color: var(--main-color);
+        }
+        .title {
+            color: var(--main-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">DIV ELEMENT.</div>
+    <h2 class="title">XIZHOU</h2>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            font-size: 15px;
+        }
+        .box {
+            /* 1. em: 相对自己的 font-size */
+            /* 如果自己没有设置，那么会继承父元素的 font-size, 实际上还是相对于自己 */
+            /* font-size: 20px; */
+            /* 
+                如果 font-size 中有写 em 单位，可以理解成相对于父元素，但是更准确的理解还是相对于自己
+            */
+            font-size: 1em;
+            width: 10em;
+            height: 5em;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">div element.</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            color: red;
+            /* font-size: 30px; */
+            /* em 相对于自身字体（父元素字体，父过父元素也没有设置，那么使用浏览器默认字体）
+                chrome(16px)
+            */
+            font-size: 2em; /* 32px */
+        }
+        p {
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        div 本身的内容
+        <p>p 元素的内容</p>
+    </div>
+</body>
+</html>

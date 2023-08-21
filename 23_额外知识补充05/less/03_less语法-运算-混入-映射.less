@@ -1,0 +1,39 @@
+// 运算
+// .box {
+//     width: 100px * 2;
+//     // 进行运算是，会简单的吧后面的单位替换成第一个运算成员的单位，  100px + 10em => 100px + 10px
+//     height: 100px + 10em;
+//     background-color: #ff0000 + #00ff00;
+// }
+
+// 混入: mixins 基本使用
+.nowrap-ellipsis {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+// 混入：可以传入参数
+.box-border(@borderWidth: 5px, @borderColor: purple) {
+    border: @borderWidth solid @borderColor;
+}
+
+// 混入和映射(Map)结合使用
+.box_width {
+    width: 100px;
+    height: 100px;
+}
+.box1 {
+    // width: 100px;
+    width: .box_width()[width];
+    background-color: #f00;
+
+    .nowrap-ellipsis();
+    .box-border(10px, green);
+}
+.box2 {
+    width: 150px;
+    background-color: #0f0;
+
+    .nowrap-ellipsis();
+    .box-border(2px, skyblue);
+}

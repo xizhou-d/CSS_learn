@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            background-color: #f00;
+            /* 设置为 inline， width/height 不会生效 */
+            /* display: inline;
+            width: 100px;
+            height: 100px; */
+
+            /* 
+                inline：可以和其他元素在同一行显示
+                block：可以设置高度和宽度
+            */
+            display: inline-block;
+            width: 200px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <a href="#">百度一下</a>
+    <div class="box">我是 div元素</div>
+    <span>我是 span 元素</span>
+</body>
+</html>

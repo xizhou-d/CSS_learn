@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 重置代码 */
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+        /* 公共 CSS */
+        .sprite_01 {
+            background: url(../images/coverall.png);
+            display: inline-block;
+        }
+        .sprite_02 {
+            background: url(../images/iconall.png);
+            display: inline-block;
+        }
+        .sprite_02_icon_music {
+            width: 14px;
+            height: 11px;
+            background-position: 0 -24px;
+        }
+        .sprite_02_icon_play {
+            width: 16px;
+            height: 17px;
+            background-position: 0 0;
+        }
+        /* 布局代码 */
+        .item {
+            width: 140px;
+            margin: 0 auto;
+        }
+        .item .top {
+            position: relative;
+        }
+        /* 见图片下面多余的区域去掉 */
+        .item .top img {
+            /* 方式一 */
+            vertical-align: top;
+            /* 方式二 */
+            /* display: block; */
+        }
+        .item .top .cover {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            /* 精灵图 */
+            /* background-image: url('../images/coverall.png'); */
+            background-position: 0 0;
+        }
+        .item .top .info {
+            position: absolute;
+            padding: 0 5px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 27px;
+            line-height: 27px;
+            color: #ccc;
+            /* background: url('../images/coverall.png'); */
+            background-position: 0 -537px;
+        }
+        .item .top .info .icon-music {
+            position: relative;
+            top: 1px;
+            /* display: inline-block; */
+            /* width: 14px;
+            height: 11px; */
+            /* background: url('../images/iconall.png'); */
+            /* background-position: 0 -24px; */
+        }
+        .item .top .info .count {
+            font-size: 12px;
+
+        }
+        .item .top .info .icon-play {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto 0;
+            right: 10px;
+            /* display: inline-block; */
+            /* width: 16px;
+            height: 17px; */
+            /* background: url('../images/iconall.png'); */
+            /* background-position: 0 0; */
+        }
+        .item .bottom {
+            display: block;
+            font-size: 12px;
+            margin-top: 8px;
+        }
+        .item .bottom:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="item">
+        <div class="top">
+            <img src="../images/music_cover.jpeg" alt="开口沉醉 · 慵懒迷幻的欧美女声">
+            <a class="cover sprite_01" href="#"></a>
+            <div class="info sprite_01">
+                <i class="sprite_02 sprite_02_icon_music icon-music"></i>
+                <span class="count">62万</span>
+                <i class="sprite_02 sprite_02_icon_play icon-play"></i>
+            </div>
+        </div>
+        <a class="bottom" href="#">开口沉醉 · 慵懒迷幻的欧美女声</a>
+    </div>
+</body>
+</html>

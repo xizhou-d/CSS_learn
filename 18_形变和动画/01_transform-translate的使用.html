@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            border: 1px solid #000;
+            display: inline-block;
+        }
+
+        .container .box {
+            width: 200px;
+            height: 100px;
+            background-color: green;
+
+            /* 百分比： 你的百分比是相对于谁的？ */
+            /* 不同地方的百分比相对参照物是不一样 */
+
+            /* ❗️ translate 的百分比是相对于自身的 */
+            /* 如果设置的 X 位移：那么参考的是自身的宽度 */
+            /* 如果设置的 Y 位移：那么参考的是自身的高度 */
+            transform: translate(100%, 100%)
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>
+    </div>
+</body>
+</html>

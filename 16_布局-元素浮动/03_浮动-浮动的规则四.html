@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            浮动元素不能与行内级内容层叠，行内级内容将会被浮动元素推出
+             比如行内级元素、inline-block元素、块级元素的文字内容
+        */
+        .box {
+            width: 800px;
+            height: 400px;
+            background-color: orange;
+        }
+        strong {
+            /* strong 中的内容不会和前边的 span 层叠，会将第一个 span 挤到 strong 后面去  */
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <span>span element 01.</span>
+        <strong>strong element 01.</strong>
+        <span>span element 02.</span>
+        <div>div element 01.</div>
+    </div>
+</body>
+</html>
