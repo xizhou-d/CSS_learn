@@ -7,6 +7,7 @@
     <style>
         .container {
             background-color: orange;
+            /* BFC 解决高度塌陷的问题 height 必须设置为 auto，之所以这里不设置还可以生效，是因为 height 不设置的情况下默认就是 auto */
             overflow: auto;
         }
         .item {

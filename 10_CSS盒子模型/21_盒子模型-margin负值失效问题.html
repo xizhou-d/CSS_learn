@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 子元素设置为 width: 100% 获取的不是 父元素真实的宽度，仅仅是内容宽度，所以在使用 margin 负值的时候会出现问题 */
+        .content {
+            width: 400px;
+            height: 400px;
+            background-color: green;
+            padding: 20px;
+            display: flex;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 100%;
+            height: 200px;
+            margin: 0 -20px;
+            background-color: red;
+        }
+
+        .content1 {
+            width: 400px;
+            height: 400px;
+            background-color: green;
+            padding: 20px;
+            box-sizing: content-box; 
+            margin-top: 20px;
+        }
+        .container1 {
+            width: 100%;
+            height: 200px;
+            /* margin: 0 -20px; */
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="container">
+            dddddd
+        </div>
+        
+    </div>
+
+    <div class="content1">
+        <div class="container1">
+            dddddd
+        </div>
+        
+    </div>
+    <script>
+        const el = document.querySelector('.container1')
+        console.log(el.clientWidth)
+    </script>
+</body>
+</html>
