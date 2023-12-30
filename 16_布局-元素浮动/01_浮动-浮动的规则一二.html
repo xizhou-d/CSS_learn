@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        /* 
+            ◼ 元素一旦浮动后, 脱离标准流
+                 朝着向左或向右方向移动，直到自己的边界紧贴着包含块（一般是父元素）或者其他浮动元素的边界为止 定位元素会层叠在浮动元素上面
+            ◼ 如果元素是向左（右）浮动，浮动元素的左（右）边界不能超出包含块的左（右）边界    
+        */
         .item1 {
             background-color: red;
             float: left;

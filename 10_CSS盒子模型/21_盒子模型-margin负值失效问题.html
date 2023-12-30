@@ -6,6 +6,9 @@
     <title>Document</title>
     <style>
         /* 子元素设置为 width: 100% 获取的不是 父元素真实的宽度，仅仅是内容宽度，所以在使用 margin 负值的时候会出现问题 */
+        /* 
+            父元素去掉 display: flex;  子元素去掉 width: 100% 可以解决问题
+        */
         .content {
             width: 400px;
             height: 400px;

@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        /* 
+             [attr*=val]: 属性值包含某一个值val;
+             [attr^=val]: 属性值以val开头;
+             [attr$=val]: 属性值以val结尾;
+             [attr|=val]: 属性值等于val或者以val开头后面紧跟连接符-;
+             [attr~=val]: 属性值包含val, 如果有其他值必须以空格和val分割;
+        */
         [title] {
             color: res;
             font-size: 30px;

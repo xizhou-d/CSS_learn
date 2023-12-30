@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 20px;">
+<head>
+    <meta charset="UTF-8">
+    <meta id="view" name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>Document</title>
+    <script>
+        // 方案一： 缺点 需要手动计算是多少 rem, 单位转换比较繁琐
+        (function() {
+            var html = document.documentElement
+            var width = html.clientWidth
+            console.log('html', html)
+            console.log('width', width)
+            html.style.fontSize = width / 16 + 'px' // 每一列的宽度就是一个 rem，设置为根字体的大小
+        })() 
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 8rem;
+            height: 8rem;
+            background-color: black;
+        }
+        .box p {
+            width: 10rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        现在假设有一个元素，需要占据屏幕的一半，也就是我们从设计稿量出来应该为 375px 
+        设备宽度为 375px / 2 = 187.5px
+        接下来我们还需要计算 187.5px 究竟为多少列
+        每一列的宽度为 375 / 16 = 23.4375px
+        计算一共多少列 187.5 / 23.4375 = 8
+
+     -->
+    <div class="container">container</div>
+    <div class="box">
+        <p>There is a will.</p>
+    </div>
+</body>
+</html> 

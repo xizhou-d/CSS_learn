@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta id="view" name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>Document</title>
+    <script>
+        // 使用立即执行函数，避免污染全局作用域
+        (function() {
+            // viewport 缩放成物理像素
+            // 以 iphone 6/7/8 为例
+            // 750px * 缩放值 = 375px => 缩放值 = 375px / 750px => 缩放值 = 1 / DPR
+            var scale = 1 / window.devicePixelRatio
+            console.log('window.devicePixelRatio', window.devicePixelRatio)
+            var view = document.getElementById('view')
+            view.content = `width=device-width, initial-scale=${scale}, minimum-scale=${scale}, maximum-scale=${scale}`
+        })()
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 375px;
+            height: 50px;
+            margin-bottom: 30px;
+            background-color: black;
+        }
+        .lists div {
+            width: 93.75px;
+            height: 60px;
+            float: left;
+        }
+        .lists div:nth-child(1) {
+            background-color: red;
+        }
+        .lists div:nth-child(2) {
+            background-color: green;
+        }
+        .lists div:nth-child(3) {
+            background-color: purple;
+        }
+        .lists div:nth-child(4) {
+            background-color: saddlebrown;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        我们给的宽度为 375px,因此只占了一半。纳尼?按照 DPR 缩放为 700px 后，反而占不满了,因为那么这种缩放方式有啥意义呢?
+        实际上这种方式最大的意义就是开发者和设计者的像素都是统一的，因为设计者是按照 750px 来设计的(iPhone6/7/8 为例) ，那么我们前端在量图的时候，也是以 75px 为基准。通过 DPR 缩放,我们量出来是多少,在写代
+        码时就可以设置多少
+        但是如但是这种方案好像并没有解决适配的问题，假设设计稿给的是 750px 像素,我测量出来也的确是 750px,此时我将宽度设置为750px,只能保证在 iPhone 6/7/8 中没有问题，如果换成 iPhone 6/7/8 Plus,仍然存在适配问题，那么怎么解决呢?
+        此时就需要我们使用rem 适配了
+     -->
+    <div class="container"></div>
+    <div class="lists">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html> 

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 20px;">
+<head>
+    <meta charset="UTF-8">
+    <meta id="view" name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>Document</title>
+    <script>
+        // 方案一二： 图解 https://tadxouszkdl.feishu.cn/docx/ZNBEdsZ20o7kVRxBBHbctPCynre
+        (function(doc, win, designWidth) {
+            // 获取 htlm 跟元素
+            var html = doc.documentElement
+            
+            function refreshRem() {
+                var width = html.clientWidth
+                
+                if (width > designWidth) {
+                    // 设备宽度大于 designWidth, 测出来多少就是多少
+                    html.style.fontSize = 100 + 'px'
+                } else {
+                    // iphone6  width: 375px    designWidth: 750px  width / designWidth = 0.5 => 1 / window.devicePixelRatio
+                    // 现在相当于每一列的宽度是 0.5px, 相当于分成了 375 / 0.5 = 750 列
+                    // 浏览器不允许这么小的字体大小，因此 0.5px * 100 = 50px
+                    // 此时 每一列宽度是 50px, 375 / 50 = 7.5 列 -> 7.5rem
+                    // 假设此时 设计稿量出来的宽度是 375px, 对应的设备像素是 187.5px
+                    // 对应的列数是： 187.5 / 50 = 3.75rem
+                    // 假设量出来的是 100px, 对应的 设备像素是 50px -> 1 列 -> 1rem
+                    // 
+                    html.style.fontSize = 100 * (width / designWidth) + 'px'
+                }
+            }
+
+            document.addEventListener('DOMContentLoaded', refreshRem)
+        })(document, window, 750) // 这里的 750 是设计稿的宽度，项目中设计师会告诉开发
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 3.75rem;
+            height: 8rem;
+            background-color: black;
+        }
+        .box p {
+            width: 10rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+
+     -->
+    <div class="container">container</div>
+    <div class="box">
+        <p>There is a will.</p>
+    </div>
+</body>
+</html> 

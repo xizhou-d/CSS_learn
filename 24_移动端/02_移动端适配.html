@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta id="view" name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>Document</title>
+    <script>
+        // 使用立即执行函数，避免污染全局作用域
+        (function() {
+            // 获取设备宽度
+            var curWidth = document.documentElement.clientWidth;
+            console.log('curWidth', curWidth)
+            // 计算缩放的尺寸
+            var targetWidth = 375
+            var scale = curWidth / targetWidth
+            // 修改 meta 标签中 content 属性内容和 scale 相关的
+            var view = document.getElementById('view')
+            view.content = `width=device-width, initial-scale=${scale}, minimum-scale=${scale}, maximum-scale=${scale}`
+        })()
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 375px;
+            height: 50px;
+            margin-bottom: 30px;
+            background-color: black;
+        }
+        .lists div {
+            width: 93.75px;
+            height: 60px;
+            float: left;
+        }
+        .lists div:nth-child(1) {
+            background-color: red;
+        }
+        .lists div:nth-child(2) {
+            background-color: green;
+        }
+        .lists div:nth-child(3) {
+            background-color: purple;
+        }
+        .lists div:nth-child(4) {
+            background-color: saddlebrown;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        看样子是解决了问题,但是这种适配方案也有其本身的缺点，主要有两点:
+        1. 就像在viewport设置宽度的时候,可以把宽度设置成一个固定值一样，会出现所有的手机看上去都是同样的大
+            小，没有分别了，不太好,厂商特意做出各种大小的手机,还要弄成一样，那人家买大屏机有什么意义
+        2. 算出的的值在一些有小数的情况下可能会出现误差(无关紧要),因为设备独立像素不能有小数
+        3. 对设计稿的测量存在问题
+     -->
+    <div class="container"></div>
+    <div class="lists">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html> 
