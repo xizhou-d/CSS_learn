@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/body_bgc.css">
     <title>Document</title>
     <style>
+        /* css 变量只有在 style 标签中或者在内嵌样式的 style 中定义才能使用。通过 link 标签引入的 css 文件中定义的 css 变量是不能用的 */
         /* html 可以写成 :root */
         html {
             /* 定义了一个变量 */
@@ -15,7 +17,7 @@
             color: var(--main-color);
         }
         .title {
-            color: var(--main-color);
+            color: var(--link-style-color);
         }
     </style>
 </head>
