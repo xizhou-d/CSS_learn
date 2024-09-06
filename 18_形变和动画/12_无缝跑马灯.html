@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .marquee {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .content, .content1 {
+        display: flex;
+        overflow: hidden;
+        width: 650px;
+        background-color: aqua;
+    }
+    .marquee-content {
+      display: flex;
+      animation: marquee 8s linear infinite;
+      animation-play-state: running;
+    }
+
+    .marquee-item {
+        white-space: nowrap;
+      padding: 0 50px; /* 每个内容块之间的间隔 */
+      direction: rtl;
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0); /* 从容器左侧开始 */
+      }
+      to {
+        /* 设置一个周期滚动的距离：假如 9 个 span 是一个周期，那需要移动的距离就是 9 * width */
+        transform: translateX(-1216px); /* 滚动到整个内容的左侧 */
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="marquee">
+    <div class="content">
+        <div class="marquee-content" id="marqueeContent">
+            <span class="marquee-item">内容 1</span>
+            <span class="marquee-item">内容 2</span>
+            <span class="marquee-item">内容 3</span>
+            <span class="marquee-item">内容 4</span>
+            <span class="marquee-item">内容 5</span>
+            <span class="marquee-item">内容 6</span>
+            <span class="marquee-item">内容 7</span>
+            <span class="marquee-item">内容 8</span>
+            <span class="marquee-item">内容 9</span>
+            <!-- 避免空白 第一屏完成之后占用空白区域 -->
+            <span class="marquee-item">内容 1</span>
+            <span class="marquee-item">内容 2</span>
+            <span class="marquee-item">内容 3</span>
+            <span class="marquee-item">内容 4</span>
+            <span class="marquee-item">内容 5</span>
+            <span class="marquee-item">内容 6</span>
+            <span class="marquee-item">内容 7</span>
+            <span class="marquee-item">内容 8</span>
+            <span class="marquee-item">内容 9</span>
+        </div>
+    </div>
+    
+</div>
+</body>
+</html>
