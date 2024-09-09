@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        :root {
+            --content-width: 650px;
+            /* 动态设置内容宽度 */
+            --end-width: 600px;
+        }
+
+        .end {
+            position: fixed;
+            margin-top: 100px;
+            width: 50px;
+            height: 50px;
+            background-color: fuchsia;
+            top: var(--end-width);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="end"></div>
+    <script>
+        let index = 10
+        setInterval(() => {
+            index++
+            document.documentElement.style.setProperty("--end-width", `${index}px`);
+            console.log(document.documentElement.style.getPropertyValue("--end-width"));
+        }, 500)
+    </script>
+</body>
+
+</html>
