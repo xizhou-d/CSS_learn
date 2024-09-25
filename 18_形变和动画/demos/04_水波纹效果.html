@@ -5,12 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        :root {
+            --bg-lighten-darken-shimmer-bg: #fafafa;
+            --bg-lighten-darken-shimmer-enhancement: #000000;
+        }
+
         @keyframes fadeOut {
             0% {
-                transform: translateX(-100%);
+                opacity: 1;
             }
             100% {
-                transform: translateX(100%);
+                opacity: 0;
             }
         }
         @keyframes shimmer {
@@ -21,20 +26,12 @@
                 transform: translateX(100%);
             }
         }
-        /* @keyframes shimmerBgOut {
+        @keyframes shimmerBgOut {
             0% {
                 background: var(--bg-lighten-darken-shimmer-bg);
             }
             100% {
                 background: var(--bg-lighten-darken-shimmer-enhancement);
-            }
-        } */
-        @keyframes shimmerBgOut {
-            0% {
-                background: #0d0d0d;
-            }
-            100% {
-                background: #000000;
             }
         }
 
@@ -45,8 +42,20 @@
             background-color: #fafafa;
             overflow: hidden;
             z-index: 1;
+            border-radius: 8px;
         }
-        .content {
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            min-width: 100%;
+            opacity: .001;
+            object-fit: cover;
+        }
+        .box.is-loading::after {
             display: block;
             position: absolute;
             top: -10%;
@@ -58,12 +67,33 @@
             background: linear-gradient(98deg, #fafafa 16%, #f5f5f5 32%, #fafafa 48%);
             transform: translate(-100%);
         }
+        .box::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: -10%;
+            left: -10%;
+            right: -10%;
+            bottom: -10%;
+            transform: none;
+            background: var(--bg-lighten-darken-shimmer-bg);
+            animation: .4s ease-out 1 forwards fadeOut, 1s linear 1 forwards shimmerBgOut;
+            pointer-events: none;
+        }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
-    <div class="box">
-        <div class="content1"></div>
+    <div class="box is-loading">
+        <img class="content1" src="../images/campbell-glim-magenta-dresses-alohas-521155.jpg" />
         <div class="content"></div>
     </div>
+
+    <script>
+        setTimeout(() => {
+            $('.box').removeClass('is-loading')
+            $('.content1').css('opacity', 1)
+        }, 2000)
+    </script>
 </body>
 </html>
